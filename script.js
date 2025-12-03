@@ -15,12 +15,38 @@ document.addEventListener("DOMContentLoaded", () => {
             sections[index].style.display = "block";
             index++;
             setTimeout(showNext, 3000);
-        } 
-        else {
+        } else {
             sections.forEach(sec => sec.style.display = "none");
             finalSection.style.display = "block";
         }
     }
 
     showNext();
+
+    // ----- Formspree submission via Fetch -----
+    const form = document.getElementById("msgForm");
+
+    form.addEventListener("submit", function(e) {
+        e.preventDefault(); // STOP default submission
+
+        const formData = new FormData(form);
+
+        fetch("https://formspree.io/f/xpwvrjay", {
+            method: "POST",
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            if (response.ok) {
+                alert("Thank you for your valuable information ❤️");
+                form.reset(); // clear form
+            } else {
+                alert("Oops! Something went wrong. Try again.");
+            }
+        }).catch(error => {
+            alert("Oops! Something went wrong. Try again.");
+            console.error(error);
+        });
+    });
 });
