@@ -1,0 +1,87 @@
+body {
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    padding: 10px;
+}
+
+.section {
+    display: none;
+    margin-top: 40px;
+    animation: fadeIn 1.5s ease;
+}
+
+/* 🔥 Fix image size — Perfect square, responsive */
+.photo {
+    width: 300px;
+    height: 300px;
+    object-fit: cover; /* stops stretching */
+    border-radius: 15px;
+    border: 3px solid #1e90ff; /* BLUE BORDER */
+    box-shadow: 0 0 15px #1e90ff;
+    margin-top: 15px;
+}
+
+/* Fade Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.title {
+    text-align: center;
+    margin-top:200px;
+    font-size: 28px;
+    color: #6ab5ff;
+}
+.h1{
+    font-size: larger;
+    font-family:'Courier New', Courier, monospace;
+    color:chartreuse;
+}
+.subtitle {
+    font-size: 18px;
+    color: #cccccc;
+}
+
+.final-text {
+    font-size: 20px;
+    line-height: 1.7;
+    padding: 20px;
+}
+
+.form-title {
+    color: #00d4ff;
+    margin-top: 20px;
+}
+
+.msg-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 90%;
+    max-width: 400px;
+    margin: auto;
+}
+
+.msg-form input,
+.msg-form textarea {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+}
+
+.msg-form button {
+    padding: 12px;
+    border: none;
+    background-color: #00ccff;
+    color: black;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.msg-form button:hover {
+    background-color: #009bd1;
+}
